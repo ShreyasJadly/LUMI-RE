@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LUMIÈRE Skincare</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      scroll-behavior: smooth;
+      height: 100%;
+      overflow-x: hidden;
+      font-family: 'Outfit', sans-serif;
+      background: linear-gradient(to bottom, #fff8f5, #ffe9e3);
+      color: #333;
+      line-height: 1.6;
+    }
+    .hero {
+      background: linear-gradient(to right, #fff1ea, #ffd6cd);
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .hero img {
+      width: 120px;
+      margin-bottom: 20px;
+      animation: fadeIn 1.5s ease-in-out forwards;
+    }
+    .hero h1 {
+      font-size: 3.5em;
+      margin-bottom: 10px;
+      color: #b86448;
+      animation: slideDown 1s ease-in-out;
+    }
+    .hero p {
+      font-size: 1.4em;
+      color: #5e4b45;
+    }
+    .cta-button {
+      margin-top: 30px;
+      background-color: #b86448;
+      color: #fff;
+      padding: 12px 30px;
+      font-size: 1.1em;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .cta-button:hover {
+      background-color: #9c3e2f;
+    }
+    section {
+      padding: 100px 20px;
+      max-width: 1000px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(60px) scale(0.98);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+      will-change: transform, opacity;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    section:nth-child(even) {
+      background-color: #fffaf8;
+    }
+    h2 {
+      color: #b86448;
+      margin-bottom: 20px;
+      font-size: 2em;
+    }
+    p {
+      font-size: 1.1em;
+      margin-bottom: 20px;
+    }
+    footer {
+      text-align: center;
+      padding: 30px;
+      background-color: #fce9e3;
+      color: #777;
+      font-size: 0.9em;
+    }
+    @keyframes slideDown {
+      0% { opacity: 0; transform: translateY(-30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <img src="WhatsApp Image 2025-07-23 at 21.07.32.jpeg" alt="LUMIÈRE Logo">
+    <h1>LUMIÈRE</h1>
+    <p>Skincare that’s simple, stylish, and designed to stand out.</p>
+    <a href="products.html"><button class="cta-button">View Products</button></a>
+  </div>
+
+  <section>
+    <h2>About the Market</h2>
+    <p>Skincare is growing quickly in India, especially among people aged 15 to 30 — and that’s the group LUMIÈRE is focusing on. They want skincare that's easy to use, works well, and is affordable — without confusing labels or high prices.</p>
+  </section>
+
+  <section>
+    <h2>Our Difference</h2>
+    <p>There are some big brands in the market, like Mamaearth, Minimalist, Dot & Key, and Plum — but each has its own problems. Mamaearth is very popular, but some people think it doesn’t give real results. Minimalist is science-based, but its serious look doesn’t appeal much to younger people. Dot & Key is fun and trendy, but it’s too expensive to use every day. Plum is affordable, but it doesn’t work for all skin types.</p>
+    <p>That’s where LUMIÈRE comes in — using clean ingredients, simple routines, and packaging that’s fresh and eye-catching, which fits what today’s customers want and can afford.</p>
+  </section>
+
+  <section>
+    <h2>Marketing Strategy</h2>
+    <p>To grow the brand, we’ll use influencer marketing on platforms like Instagram and YouTube. We’ll give out free samples, run contests, and list our products on big online stores like Amazon and Nykaa to reach more people.</p>
+  </section>
+
+  <section>
+    <h2>Our Product</h2>
+    <p>Our starter box already has essential skincare products like a face mask and serum — making the routine easy and complete from the start.</p>
+  </section>
+
+  <section>
+    <h2>Our Vision</h2>
+    <p>We also plan to use eco-friendly packaging and build an online community that celebrates real skin and helps build confidence.</p>
+  </section>
+
+  <section>
+    <h2>Growth Plan</h2>
+    <p>We’ll start with small funding and grow step by step with help from investors as we expand.</p>
+  </section>
+
+  <section>
+    <h2>Sales Channels</h2>
+    <p>Our sales plan includes selling online through our website and major marketplaces, as well as offline through events, pop-ups, and beauty stores.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 LUMIÈRE Skincare. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.15
+    });
+
+    sections.forEach((section, index) => {
+      section.style.transitionDelay = `${index * 0.1}s`;
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>
